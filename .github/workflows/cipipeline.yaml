@@ -24,7 +24,7 @@ jobs:
           password: ${{secret.DOCKERHUB_TOKEN}}
       - name: Build and release to Dockerhub
         env:
-          NAME: kyla333
+          NAME: ${{secret.DOCKERHUB_USERNAME}}
           REPO: flaskweb
         run: |
           docker build -t $REPO .
